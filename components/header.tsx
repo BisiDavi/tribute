@@ -11,7 +11,14 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      <section className="hero"></section>
+      <section className="hero">
+        <h1>Evermore</h1>
+        <p>
+          I'm a simple responsive blog template. Easily add new blog posts using
+          the Webflow Editor or customize your layout/design using the Webflow
+          Designer.
+        </p>
+      </section>
     </header>
   );
 }

@@ -4,7 +4,7 @@ import menus from "@json/menu.json";
 export default function Footer() {
   return (
     <>
-      <footer>
+      <footer className="footer">
         <ul>
           {menus.map((menu, index) => (
             <li key={index}>
@@ -18,11 +18,23 @@ export default function Footer() {
       </footer>
       <style jsx>
         {`
-          footer {
+          .footer {
             padding-top: 29px;
             padding-bottom: 29px;
             border-top: 1px solid #ddd;
             background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            justify-content: space-around;
+          }
+          .footer li {
+            list-style: none;
+            margin: 0px 30px;
+          }
+          .footer ul {
+            display: flex;
+            align-items: center;
           }
         `}
       </style>

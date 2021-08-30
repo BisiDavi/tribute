@@ -8,19 +8,26 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <button onClick={() => setShowMenu(!showMenu)}>
-          <Image src="/hamburger.svg" alt="hamburger" height={15} width={15} />{" "}
-          <b>Menu</b>
-        </button>
-        {showMenu && (
-          <nav>
-            {menus.map((menu, index) => (
-              <Link key={index} href={menu.link} passHref>
-                <a>{menu.name}</a>
-              </Link>
-            ))}
-          </nav>
-        )}
+        <nav>
+          <button onClick={() => setShowMenu(!showMenu)}>
+            <Image
+              src="/hamburger.svg"
+              alt="hamburger"
+              height={15}
+              width={15}
+            />{" "}
+            <b>Menu</b>
+          </button>
+          {showMenu && (
+            <div className="menu">
+              {menus.map((menu, index) => (
+                <Link key={index} href={menu.link} passHref>
+                  <a>{menu.name}</a>
+                </Link>
+              ))}
+            </div>
+          )}
+        </nav>
         <section className="hero">
           <h1>Prof. A. A Akinpelumi</h1>
           <p>Loving | Disciplined | Hard Working.</p>
@@ -44,9 +51,6 @@ export default function Header() {
             display: flex;
             align-items: center;
           }
-          nav a {
-            margin: 0px 20px;
-          }
           .header button {
             position: absolute;
             left: 20px;
@@ -63,7 +67,29 @@ export default function Header() {
           button b {
             margin: 0px 10px;
           }
-          .header button:hover {
+
+          .header nav .menu a {
+            padding: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-top: 1px solid #d1d1d1;
+            background-color: #fff;
+            color: #333;
+          }
+
+          .menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 20px;
+            top: 70px;
+            width: 90px;
+            border: 1px solid #c9c9c9;
+            border-radius: 5px;
+          }
+
+          .header button:hover,
+          .header nav .menu a:hover {
             background-color: rgba(0, 0, 0, 0.06);
           }
         `}

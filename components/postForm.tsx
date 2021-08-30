@@ -1,14 +1,15 @@
-import React, { ChangeEvent, MouseEventHandler, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import formContent from "@json/post.json";
 import displayFields from "@utils/displayFields";
-import Spinner from "./spinner";
+import Spinner from "@components/spinner";
+import axiosInstance from "@network/axiosInstance";
 
 export default function PostForm() {
   const [loading, setLoading] = useState(false);
   const [post, setPost] = useState({
     fullName: "",
     email: "",
-    experience: "",
+    post: "",
   });
 
   function inputHandler(
@@ -20,36 +21,32 @@ export default function PostForm() {
     });
   }
 
-  const options = {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json;charset=UTF-8",
-    },
-    body: JSON.stringify(post),
-  };
-
-  function submitHandler() {
+  function submitHandler(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
     setLoading(true);
     console.log("I am working");
-    fetch("/api/post", options)
+    axiosInstance
+      .post("/post", post)
       .then((response) => {
         console.log("response", response);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("error", error);
+        setLoading(false);
       });
-    setLoading(false);
   }
+
+  console.log("loading", loading);
 
   return (
     <>
       {loading && <Spinner />}
-      <form className="postForm">
+      <form className="postForm" onSubmit={submitHandler}>
         {formContent.map((formElement) =>
           displayFields(formElement, inputHandler)
         )}
-        <button className="submit" onClick={submitHandler} type="submit">
+        <button className="submit" type="submit">
           Submit
         </button>
       </form>

@@ -9,6 +9,7 @@ export default function TextArea({ content, ...props }: InputFieldProps) {
           onChange={props.onChange}
           placeholder={content.placeholder}
           name={content.name}
+          required
         ></textarea>
       </div>
       <style jsx>

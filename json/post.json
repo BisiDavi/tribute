@@ -12,6 +12,12 @@
     "type": "input"
   },
   {
+    "label": "Post Title",
+    "name": "title",
+    "placeholder": "post title",
+    "type": "input"
+  },
+  {
     "label": "Your experience with Prof.",
     "name": "post",
     "placeholder": "Experience with Prof.",

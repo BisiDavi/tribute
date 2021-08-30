@@ -10,6 +10,7 @@ export default function PostForm() {
     fullName: "",
     email: "",
     post: "",
+    title: "",
   });
 
   function inputHandler(

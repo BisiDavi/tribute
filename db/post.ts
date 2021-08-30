@@ -5,7 +5,7 @@ const PostSchema = new mongoose.Schema(
     fullName: String,
     post: String,
     email: String,
-    
+    title: String,
   },
   {
     timestamps: true,

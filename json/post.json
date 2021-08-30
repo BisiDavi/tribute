@@ -2,16 +2,19 @@
   {
     "label": "Your Full Name",
     "name": "fullName",
-    "placeholder": "Full Name"
+    "placeholder": "Full Name",
+    "type": "input"
   },
   {
     "label": "Your Email",
     "name": "email",
-    "placeholder": "Email"
+    "placeholder": "Email",
+    "type": "input"
   },
   {
     "label": "Your experience with Prof.",
     "name": "experience",
-    "placeholder": "Experience with Prof."
+    "placeholder": "Experience with Prof.",
+    "type": "textarea"
   }
 ]

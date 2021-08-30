@@ -1,16 +1,15 @@
 import React from "react";
 
-export default function InputField({ content, ...props }: InputFieldProps) {
+export default function TextArea({ content, ...props }: InputFieldProps) {
   return (
     <>
       <div className="inputGroup">
         <label>{content.label}</label>
-        <input
-          onChange={props.inputHandler}
-          name={content.name}
+        <textarea
+          onChange={props.onChange}
           placeholder={content.placeholder}
-          required
-        />
+          name={content.name}
+        ></textarea>
       </div>
       <style jsx>
         {`
@@ -21,13 +20,9 @@ export default function InputField({ content, ...props }: InputFieldProps) {
           .inputGroup label {
             font-size: 16px;
           }
-          .inputGroup input {
+          .inputGroup textarea {
             width: 100%;
-            margin: 20px;
-            height: 40px;
-            border-radius: 5px;
-            border: 1px solid black;
-            padding: 20px;
+            height: 100px;
           }
         `}
       </style>
@@ -36,7 +31,7 @@ export default function InputField({ content, ...props }: InputFieldProps) {
 }
 
 interface InputFieldProps {
-  inputHandler: () => void;
+  onChange: () => void;
   content: {
     name: string;
     placeholder: string;

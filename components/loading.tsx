@@ -19,6 +19,7 @@ export default function Loading() {
             color: white;
             justify-content: center;
             align-items: center;
+            background-color: #bb452ab5;
           }
         `}
       </style>

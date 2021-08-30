@@ -9,7 +9,7 @@ export default function Header() {
     <>
       <header className="header">
         <nav>
-          <button onClick={() => setShowMenu(!showMenu)}>
+          <button className="menuButton" onClick={() => setShowMenu(!showMenu)}>
             <Image
               src="/hamburger.svg"
               alt="hamburger"
@@ -28,6 +28,11 @@ export default function Header() {
             </div>
           )}
         </nav>
+        <Link href="/post" passHref>
+          <a>
+            <button className="post">POST</button>
+          </a>
+        </Link>
         <section className="hero">
           <h1>Prof. A. A Akinpelumi</h1>
           <p>Loving | Disciplined | Hard Working.</p>
@@ -47,11 +52,25 @@ export default function Header() {
             border-bottom: 1px solid #ddd;
             text-align: center;
           }
+          button.post {
+            height: 50px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            position: absolute;
+            right: 20px;
+            border: 1px solid #c9c9c9;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            top: 20px;
+          }
           nav {
             display: flex;
             align-items: center;
           }
-          .header button {
+          .header nav .menuButton {
             position: absolute;
             left: 20px;
             top: 20px;
@@ -64,7 +83,7 @@ export default function Header() {
             -webkit-transition: background-color 200ms ease;
             transition: background-color 200ms ease;
           }
-          button b {
+          nav button b {
             margin: 0px 10px;
           }
 

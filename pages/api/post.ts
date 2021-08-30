@@ -4,7 +4,7 @@ import connectToDatabase from "../../db/database";
 export default async function PostHandler(req, res) {
   const { method } = req;
 
-  await connectToDatabase();
+  await connectToDatabase().then(() => console.log("connected to db"));
 
   switch (method) {
     case "POST": {

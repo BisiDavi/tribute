@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Your Full Name",
+    "name": "fullName",
+    "placeholder": "Full Name"
+  },
+  {
+    "label": "Your Email",
+    "name": "email",
+    "placeholder": "Email"
+  },
+  {
+    "label": "Your experience with Prof.",
+    "name": "experience",
+    "placeholder": "Experience with Prof."
+  }
+]

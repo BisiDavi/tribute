@@ -17,13 +17,14 @@ export default function InputField({ content, ...props }: InputFieldProps) {
           .inputGroup {
             display: flex;
             flex-direction: column;
+            width: 100%;
           }
           .inputGroup label {
             font-size: 16px;
           }
           .inputGroup input {
             width: 100%;
-            margin: 20px;
+            margin: 20px 0px;
             height: 40px;
             border-radius: 5px;
             border: 1px solid black;

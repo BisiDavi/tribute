@@ -16,13 +16,16 @@ export default function TextArea({ content, ...props }: InputFieldProps) {
           .inputGroup {
             display: flex;
             flex-direction: column;
+            width: 100%;
           }
           .inputGroup label {
             font-size: 16px;
           }
           .inputGroup textarea {
+            margin: 20px 0px;
             width: 100%;
             height: 100px;
+            padding: 20px;
           }
         `}
       </style>

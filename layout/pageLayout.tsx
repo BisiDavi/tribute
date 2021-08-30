@@ -20,8 +20,8 @@ export default function PageLayout({
       <style jsx>
         {`
           .page-layout main {
-            padding-top: 80px;
-            padding-bottom: 80px;
+            padding-top: 10px;
+            padding-bottom: 30px;
             background-color: #fff;
           }
         `}

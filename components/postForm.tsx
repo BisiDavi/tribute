@@ -37,13 +37,14 @@ export default function PostForm() {
         {`
           .postForm {
             display: flex;
-            align-items: center;
             margin: auto;
             justify-content: center;
             flex-direction: column;
             padding: 50px;
             border-radius: 5px;
             border: 1px solid black;
+            width: 30%;
+            align-items: flex-start;
           }
         `}
       </style>

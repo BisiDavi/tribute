@@ -8,14 +8,25 @@ export default function PageLayout({
   children,
 }: PropsWithChildren<PageLayoutProps>) {
   return (
-    <div className="page-layout">
-      <Head>
-        <title>Prof A.A Akinpelumi | {title}</title>
-      </Head>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
+    <>
+      <div className="page-layout">
+        <Head>
+          <title>Prof A.A Akinpelumi | {title}</title>
+        </Head>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
+      <style jsx>
+        {`
+          .page-layout main {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            background-color: #fff;
+          }
+        `}
+      </style>
+    </>
   );
 }
 

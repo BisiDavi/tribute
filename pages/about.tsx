@@ -10,7 +10,7 @@ export default function About() {
           <p></p>
         </div>
         <div className="image">
-          <Image src="" alt="Prof A.A Akinpelumi" />
+          {/* <Image src="" alt="Prof A.A Akinpelumi" /> */}
           <h6>Prof A.A AkinPelumi</h6>
           <p></p>
         </div>

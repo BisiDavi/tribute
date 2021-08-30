@@ -4,10 +4,22 @@ import TextArea from "@components/textArea";
 export default function displayFields(formElement, inputHandler) {
   switch (formElement.type) {
     case "input": {
-      return <InputField content={formElement} inputHandler={inputHandler} />;
+      return (
+        <InputField
+          key={formElement.name}
+          content={formElement}
+          inputHandler={inputHandler}
+        />
+      );
     }
     case "textarea": {
-      return <TextArea content={formElement} onChange={inputHandler} />;
+      return (
+        <TextArea
+          key={formElement.name}
+          content={formElement}
+          onChange={inputHandler}
+        />
+      );
     }
     default:
       return null;

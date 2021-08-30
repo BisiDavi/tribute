@@ -8,6 +8,8 @@ export default async function PostHandler(req, res) {
 
   console.log("req,", req.body);
 
+  console.log("hello");
+
   switch (method) {
     case "POST": {
       try {

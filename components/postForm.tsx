@@ -1,15 +1,15 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, MouseEventHandler, useState } from "react";
 import formContent from "@json/post.json";
 import displayFields from "@utils/displayFields";
+import Spinner from "./spinner";
 
 export default function PostForm() {
+  const [loading, setLoading] = useState(false);
   const [post, setPost] = useState({
     fullName: "",
     email: "",
     experience: "",
   });
-
-  console.log("post", post);
 
   function inputHandler(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -29,8 +29,9 @@ export default function PostForm() {
     body: JSON.stringify(post),
   };
 
-  function submitHandler(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+  function submitHandler() {
+    setLoading(true);
+    console.log("I am working");
     fetch("/api/post", options)
       .then((response) => {
         console.log("response", response);
@@ -38,15 +39,17 @@ export default function PostForm() {
       .catch((error) => {
         console.error("error", error);
       });
+    setLoading(false);
   }
 
   return (
     <>
-      <form className="postForm" onSubmit={submitHandler}>
-        {formContent.map((formElement, index) =>
+      {loading && <Spinner />}
+      <form className="postForm">
+        {formContent.map((formElement) =>
           displayFields(formElement, inputHandler)
         )}
-        <button className="submit" type="submit">
+        <button className="submit" onClick={submitHandler} type="submit">
           Submit
         </button>
       </form>

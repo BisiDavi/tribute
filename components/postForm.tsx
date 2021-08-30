@@ -20,9 +20,24 @@ export default function PostForm() {
     });
   }
 
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+    body: JSON.stringify(post),
+  };
+
   function submitHandler(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("post", post);
+    fetch("/api/post", options)
+      .then((response) => {
+        console.log("response", response);
+      })
+      .catch((error) => {
+        console.error("error", error);
+      });
   }
 
   return (
@@ -31,7 +46,9 @@ export default function PostForm() {
         {formContent.map((formElement, index) =>
           displayFields(formElement, inputHandler)
         )}
-        <button type="submit">Submit</button>
+        <button className="submit" type="submit">
+          Submit
+        </button>
       </form>
       <style jsx>
         {`
@@ -45,6 +62,18 @@ export default function PostForm() {
             border: 1px solid black;
             width: 30%;
             align-items: flex-start;
+          }
+          button.submit {
+            width: 80%;
+            height: 40px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            margin: auto;
+            cursor: pointer;
           }
         `}
       </style>

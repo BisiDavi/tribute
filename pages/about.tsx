@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import PageLayout from "@layout/pageLayout";
 
 export default function About() {

@@ -6,6 +6,8 @@ export default async function PostHandler(req, res) {
 
   await connectToDatabase().then(() => console.log("connected to db"));
 
+  console.log("req,", req.body);
+
   switch (method) {
     case "POST": {
       try {
